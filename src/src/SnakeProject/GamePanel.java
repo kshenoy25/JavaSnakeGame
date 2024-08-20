@@ -1,3 +1,5 @@
+package SnakeProject;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -21,10 +23,11 @@ public class GamePanel extends JPanel implements ActionListener {
     final int y[] = new int[GAME_UNITS];
 
     int bodyParts = 6;
-    int appleaEaten = 0;
+    int applesEaten = 0;
 
     // coordinate x of where apple is located
     int appleX;
+
     // coordinate y of where apple is located
     int appleY;
     char direction = 'R';
@@ -37,14 +40,39 @@ public class GamePanel extends JPanel implements ActionListener {
         // finish creating instance of the random class
         random = new Random();
         this.setPreferredSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
+        this.setBackground(Color.BLACK);
+        this.setFocusable(true);
+        this.addKeyListener(new MyKeyAdapter());
+        startGame();
     }
     public void startGame(){
-
+        newApple();
+        running = true;
+        // this = using the action listener interface
+        timer = new Timer(DELAY, this);
+        timer.start();
     }
     public void paintComponent(Graphics g){
+        // super class
+        super.paintComponent(g);
+        //g.setColor(Color.WHITE);
+        draw(g);
 
     }
     public void draw(Graphics g){
+        // Visualize via a matrix on our game panel
+
+        /*
+        for (int i = 0; i < SCREEN_HEIGHT/UNIT_SIZE; i++){
+            g.drawLine(i*UNIT_SIZE, 0, i*UNIT_SIZE, SCREEN_HEIGHT);
+            g.drawLine(0, i*UNIT_SIZE, SCREEN_WIDTH, i*UNIT_SIZE);
+        }
+
+         */
+            
+    }
+    // populate game with apples
+    public void newApple(){
 
     }
     public void move(){
@@ -64,6 +92,7 @@ public class GamePanel extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+
 
     }
     public class MyKeyAdapter extends KeyAdapter {

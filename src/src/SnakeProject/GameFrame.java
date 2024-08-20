@@ -1,10 +1,12 @@
+package SnakeProject;
+
 import javax.swing.*;
 
 public class GameFrame extends JFrame {
 
     GameFrame(){
         /*
-        GamePanel gamePanel = new GamePanel();
+        SnakeProject.GamePanel gamePanel = new SnakeProject.GamePanel();
         this.add(gamePanel);
 
          */

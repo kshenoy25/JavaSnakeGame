@@ -1,6 +1,8 @@
+package SnakeProject;
+
 public class Main {
     public static void main(String[] args) {
-        //GameFrame frame = new GameFrame();
+        //SnakeProject.GameFrame frame = new SnakeProject.GameFrame();
         // Not using frame for any other uses?
         new GameFrame();
     }
