@@ -9,9 +9,9 @@ import java.awt.event.KeyEvent;
 import java.util.Random;
 
 public class GamePanel extends JPanel implements ActionListener {
-    static final int SCREEN_WIDTH = 600;
-    static final int SCREEN_HEIGHT = 600;
-    static final int UNIT_SIZE = 25;
+    static final int SCREEN_WIDTH = 1300;
+    static final int SCREEN_HEIGHT = 750;
+    static final int UNIT_SIZE = 20;
     static final int GAME_UNITS = (SCREEN_WIDTH * SCREEN_HEIGHT) / UNIT_SIZE;
 
     // delay for timer
@@ -73,7 +73,7 @@ public class GamePanel extends JPanel implements ActionListener {
 
          */
 
-            g.setColor(Color.RED);
+            g.setColor(Color.WHITE);
             g.fillOval(appleX, appleY, UNIT_SIZE, UNIT_SIZE);
 
             // draw head of snake and the body
